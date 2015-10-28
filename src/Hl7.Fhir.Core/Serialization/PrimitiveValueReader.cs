@@ -46,7 +46,7 @@ namespace Hl7.Fhir.Serialization
                 if (enumMapping != null)
                 {
                     var enumLiteral = (string)primitiveValue;
-                    if (enumMapping.ContainsLiteral(enumLiteral))
+                    if (enumMapping.ContainsLiteral(enumLiteral.ToLower()))
                         return enumMapping.ParseLiteral((string)primitiveValue);
                     else
                         throw Error.Format("Literal {0} is not a valid value for enumeration {1}", _current, enumLiteral, enumMapping.Name);
